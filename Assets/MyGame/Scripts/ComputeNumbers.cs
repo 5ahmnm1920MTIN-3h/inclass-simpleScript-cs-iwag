@@ -1,63 +1,54 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class ComputeNumbers : MonoBehaviour
 {
-    public InputField ipVarA;
-    public InputField ipVarB;
-    public Text result;
+    [SerializeField] private Text result;
+    [SerializeField] private InputField inputField1;
+    [SerializeField] private InputField inputField2;
+    [SerializeField] private Button resetButton;
+    [SerializeField] private Button subtractButton;
 
-    float varA;
-    float varB;
+    private const string resultText = "Result";
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        varA = 5;
-        varB = 4;
-        SubstractNumbers(varA, varB);
-        SubstractNumbers(4, 7);
-        Debug.Log("in Start: " + SubstractNumbers(varA, varB));
-        Debug.Log("in Start: " + SubstractNumbers(4, 7));
-        Debug.Log(10 - SubstractNumbers(varA, varB));
-        Debug.Log(100 - SubstractNumbers(4, 7));
-        SetResult();
+        resetButton.interactable = false;
     }
 
     public void SetResult()
     {
-        float a = float.Parse(ipVarA.text);
-        float b = float.Parse(ipVarB.text);
-        Debug.Log("in SetResult" + (a - b));
-       // result.text = SubstractNumbers(a,b);
+        // set the result from the SubtractNumbers Method
+        result.text = SubtractNumbers().ToString();
+
+        // remove access from inputFields
+        inputField1.interactable = false;
+        inputField2.interactable = false;
+
+        // activate the now needed buttons
+        subtractButton.interactable = false;
+        resetButton.interactable = true;
     }
 
-    public string TestMethode()
+    public void Reset()
     {
-        Debug.Log("Test");
-        return "Test";
-    }
-    public void TestMethodeVOID()
-    {
-        Debug.Log("Test");
-    }
-    public float MultNumbers(float variableA, float variableB)
-    {
-        float result = variableA * variableB;
-        //Debug.Log("Test sub" + result.ToString());
-        return result;
-    }
-    public float SubstractNumbers(float variableA, float variableB)
-    {
-        float result = variableA - variableB;
-        //Debug.Log("Test sub" + result.ToString());
-        return result;
-    }
-    // Update is called once per frame
-    void Update()
-    {
+        // reset the all texts
+        inputField1.text = "";
+        inputField2.text = "";
+        result.text = resultText;
 
+        // give access to the inputfields again
+        inputField1.interactable = true;
+        inputField2.interactable = true;
+
+        // activate the now needed buttons
+        subtractButton.interactable = true;
+        resetButton.interactable = false;
+    }
+
+    private float SubtractNumbers()
+    {
+        float tempResult = float.Parse(inputField1.text) - float.Parse(inputField2.text);
+        return tempResult;
     }
 }

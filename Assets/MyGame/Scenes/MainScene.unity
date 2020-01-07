@@ -202,12 +202,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 723505391}
-        m_MethodName: 
+      - m_Target: {fileID: 723505393}
+        m_MethodName: SetResult
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -650,13 +650,13 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 506488285}
   m_TextComponent: {fileID: 1584225677}
   m_Placeholder: {fileID: 158522296}
-  m_ContentType: 0
+  m_ContentType: 3
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 2
   m_LineType: 0
   m_HideMobileInput: 0
-  m_CharacterValidation: 0
+  m_CharacterValidation: 2
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
@@ -917,9 +917,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eba897bda5d1ab4eaddcfc8d2642769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ipVarA: {fileID: 1901850678}
-  ipVarB: {fileID: 506488284}
   result: {fileID: 180185503}
+  inputField1: {fileID: 1901850678}
+  inputField2: {fileID: 506488284}
+  resetButton: {fileID: 1246169805}
+  subtractButton: {fileID: 150465618}
 --- !u!1 &1055613948
 GameObject:
   m_ObjectHideFlags: 0
@@ -1106,7 +1108,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1246169806}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 723505393}
+        m_MethodName: Reset
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1246169806
@@ -1544,13 +1557,13 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1901850679}
   m_TextComponent: {fileID: 1889029994}
   m_Placeholder: {fileID: 1757119989}
-  m_ContentType: 0
+  m_ContentType: 3
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 2
   m_LineType: 0
   m_HideMobileInput: 0
-  m_CharacterValidation: 0
+  m_CharacterValidation: 2
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
